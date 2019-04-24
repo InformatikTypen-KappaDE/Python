@@ -1,6 +1,10 @@
+
+
+
+#variable für den score
 score=0.0
 
-#funktionen
+#funktion um die frage und antwort zu verarbeiten
 def getAnswer(richtige, punkte, bauerntipp="Kein Tipp, zu einfach!"):
     print("Mögliche Punkte in dieser Aufgabe: " + str(punkte) + ".")
     eingabe=input()
@@ -25,7 +29,7 @@ def getAnswer(richtige, punkte, bauerntipp="Kein Tipp, zu einfach!"):
                 print("Falsch, auch beim zweiten Versuch!")
                 return 0.0
          
-    
+#funktion für ausgabe nachdem die antwort geprüft wurde
 def platzhalter():
     print()
     print("Aktueller Punktestand: " + str(score))
@@ -33,6 +37,7 @@ def platzhalter():
     print("_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _")
     print()
 
+#unterschiedliche "bewertungen" je nach erreichten punkten
 def getBewertung(score, maxPunkte=12.5):
     percentage=score/maxPunkte
 
@@ -47,6 +52,14 @@ def getBewertung(score, maxPunkte=12.5):
     else:
         return "... ich bin enttäuscht..."
     
+
+#quizablauf
+
+#überschrift
+print("Allgemeinwissensprüfung in diversen Themen: Teil A")
+print("--------------------------------------------------")
+print()
+
 
 #FRAGE 1
 print("Was bedeutet Kirmes?")
@@ -103,6 +116,7 @@ score += getAnswer(richtige="d", punkte=3.5, bauerntipp="Kranfahrer Ronny hats d
 platzhalter()
 
 
+#abschlussausgabe
 print("Fertig. Ihre Punkte: " + str(score) + ". " + "Das Resultiert in folgender Bewertung: ")
 print(getBewertung(score=score))
 print("____________________________________________________________________________________________________________")
